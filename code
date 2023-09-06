@@ -1,13 +1,17 @@
 pipeline {
     agent any 
-
+    environment{
+        DIRECTORY_PATH = '/path/to/code/directory'
+        TESTING_ENVIRONMENT = 'TestEnv'
+        PRODUCTION_ENVIRONMENT = 'Aamya'
+        }
     stages {
         stage('Build') {
             steps {
                 echo 'Building the project...'
                 }
             }
-        }
+        
 
         stage('Unit and Integration Tests') {
             steps {
@@ -58,6 +62,6 @@ pipeline {
             }
         }
     }
-
+}
     
 
